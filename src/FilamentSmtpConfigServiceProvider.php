@@ -19,9 +19,6 @@ class FilamentSmtpConfigServiceProvider extends PackageServiceProvider {
         $package->name('filament-smtp-config')
             ->hasConfigFile()
             ->hasMigration('create_mail_settings_table')
-            ->hasSeeders([
-                MailSettingSeeder::class,
-            ])
             ->hasCommand(
                 \Ahmedeid\FilamentSmtpConfig\Commands\PublishConfigCommand::class
             );

@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Filament\SuperAdmin\Resources\BlogResource\Pages;
+
+use Ahmedeid\FilamentSmtpConfig\Filament\Resources\MailSettingResource;
+use App\Filament\SuperAdmin\Resources\BlogResource;
+use Filament\Actions;
+use Filament\Resources\Pages\EditRecord;
+
+class EditMailSettings extends EditRecord
+{
+    protected static string $resource = MailSettingResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+
+        ];
+    }
+}

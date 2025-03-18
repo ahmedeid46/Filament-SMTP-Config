@@ -28,7 +28,7 @@ class FilamentSmtpConfigServiceProvider extends PackageServiceProvider {
         parent::boot();
 
         $this->publishes([
-            __DIR__ . '/../config/filament-smtp-config.php' => config_path('filament-smtp-config.php'),
+            __DIR__ . '/config/filament-smtp-config.php' => config_path('filament-smtp-config.php'),
         ], 'filament-smtp-config');
         if ($this->app->runningInConsole()) {
             Model::unguard();

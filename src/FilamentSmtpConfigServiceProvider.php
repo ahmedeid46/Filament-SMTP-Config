@@ -22,7 +22,7 @@ class FilamentSmtpConfigServiceProvider extends PluginServiceProvider {
                 MailSettingSeeder::class,
             ])
             ->hasCommand(
-                \ahmedeid\FilamentSmtpConfig\Commands\PublishConfigCommand::class
+                \Ahmedeid\FilamentSmtpConfig\Commands\PublishConfigCommand::class
             );
     }
 

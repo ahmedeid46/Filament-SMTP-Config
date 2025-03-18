@@ -11,7 +11,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "YourVendor\\FilamentSmtpConfig\\FilamentSmtpConfigServiceProvider"
+                "Ahmedeid\\FilamentSmtpConfig\\FilamentSmtpConfigServiceProvider"
             ]
         }
     },

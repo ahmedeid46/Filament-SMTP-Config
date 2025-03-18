@@ -2,6 +2,7 @@
 
 namespace Ahmedeid\FilamentSmtpConfig\Filament\Resources;
 
+use Ahmedeid\FilamentSmtpConfig\Filament\Resources\MailSettingResource\Pages\ListMailSettings;
 use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -38,8 +39,8 @@ class MailSettingResource extends Resource {
 
     public static function getPages(): array {
         return [
-            'index' => Pages\ListMailSettings::route('/'),
-            'edit' => Pages\EditMailSetting::route('/{record}/edit'),
+            'index' => ListMailSettings::route('/'),
+            'edit' => MailSettingResource\Pages\EditMailSetting::route('/{record}/edit'),
         ];
     }
 }

@@ -1,0 +1,23 @@
+{
+    "name": "ahmedeid/filament-smtp-config",
+    "description": "Filament package for managing SMTP settings in Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ahmedeid\\FilamentSmtpConfig\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YourVendor\\FilamentSmtpConfig\\FilamentSmtpConfigServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^3.*",
+    }
+}

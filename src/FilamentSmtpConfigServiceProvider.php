@@ -8,7 +8,6 @@ use Ahmedeid\FilamentSmtpConfig\Resources\MailSettingResource;
 use Ahmedeid\FilamentSmtpConfig\Database\Seeders\MailSettingSeeder;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentSmtpConfigServiceProvider extends PackageServiceProvider {

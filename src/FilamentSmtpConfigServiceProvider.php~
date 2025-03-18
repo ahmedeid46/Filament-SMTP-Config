@@ -2,39 +2,34 @@
 
 namespace Ahmedeid\FilamentSmtpConfig;
 
-use Filament\PluginServiceProvider;
-use Spatie\LaravelPackageTools\Package;
-use Ahmedeid\FilamentSmtpConfig\Resources\MailSettingResource;
-use Ahmedeid\FilamentSmtpConfig\Database\Seeders\MailSettingSeeder;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Ahmedeid\FilamentSmtpConfig\Resources\MailSettingResource;
+use Ahmedeid\FilamentSmtpConfig\Database\Seeders\MailSettingSeeder;
 
-class FilamentSmtpConfigServiceProvider extends PackageServiceProvider {
+class FilamentSmtpConfigServiceProvider extends ServiceProvider
+{
     protected array $resources = [
         MailSettingResource::class,
     ];
 
-    public function configurePackage(Package $package): void {
-        $package->name('filament-smtp-config')
-            ->hasConfigFile()
-            ->hasMigration('create_mail_settings_table')
-            ->hasCommand(
-                \Ahmedeid\FilamentSmtpConfig\Commands\PublishConfigCommand::class
-            );
+    public function register(): void
+    {
+        // إضافة تسجيلات الحزمة هنا
     }
 
-    public function boot(): void {
-        parent::boot();
-
+    public function boot(): void
+    {
+        // نشر ملف الإعدادات إلى المسار المناسب في تطبيقك
         $this->publishes([
             __DIR__ . '/config/filament-smtp-config.php' => config_path('filament-smtp-config.php'),
         ], 'filament-smtp-config');
+
+        // إذا كان التطبيق يعمل في وضع الكونسول، نقوم بنقل الأوامر
         if ($this->app->runningInConsole()) {
-            Model::unguard();
+            Model::unguard(); // تعطيل حماية النموذج في وضع الكونسول
             Artisan::call('db:seed', ['--class' => MailSettingSeeder::class]);
         }
-
-
     }
 }

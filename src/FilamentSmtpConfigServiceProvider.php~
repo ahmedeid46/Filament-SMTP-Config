@@ -29,7 +29,7 @@ class FilamentSmtpConfigServiceProvider extends ServiceProvider
         // إذا كان التطبيق يعمل في وضع الكونسول، نقوم بنقل الأوامر
         if ($this->app->runningInConsole()) {
             Model::unguard(); // تعطيل حماية النموذج في وضع الكونسول
-            Artisan::call('migrate',['--path' => __DIR__ . '/database/migrations']);
+            Artisan::call('migrate',['--path' => __DIR__ . '/database/migrations/2024_03_17_000000_create_mail_settings_table.php']);
             Artisan::call('db:seed', ['--class' => MailSettingSeeder::class]);
         }
     }

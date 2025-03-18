@@ -18,6 +18,6 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.0",
-        "filament/filament": "^3.*"
+        "filament/filament": "^3.0"
     }
 }
